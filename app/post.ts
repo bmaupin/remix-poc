@@ -9,6 +9,12 @@ export type Post = {
   title: string;
 };
 
+type NewPost = {
+  title: string;
+  slug: string;
+  markdown: string;
+};
+
 export type PostMarkdownAttributes = {
   title: string;
 };
