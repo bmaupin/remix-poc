@@ -4,6 +4,7 @@ import {
   useTransition,
   Form,
   LoaderFunction,
+  useLocation,
 } from 'remix';
 import invariant from 'tiny-invariant';
 
@@ -19,13 +20,14 @@ export const action = newPostAction;
 
 export default function EditPost() {
   const errors = useActionData();
+  const location = useLocation();
   const post = useLoaderData();
   const transition = useTransition();
 
   console.log('post=', post);
 
   return (
-    <Form method="post">
+    <Form key={location.key} method="post">
       <p>
         <label>
           Post Title: {errors?.title ? <em>Title is required</em> : null}
