@@ -1,53 +1,18 @@
-# Welcome to Remix!
+Just playing with the [Remix](https://remix.run/) tutorial (https://remix.run/docs/en/v1/tutorials/blog) ...
 
-- [Remix Docs](https://remix.run/docs)
+#### Notes
 
-## Development
+- Frontend and backend in one app (not just one repo)
+  - Seamlessly combines react and the backend; no need to expicility "call" the backend from react (e.g. using an HTTP request)
+  - I think this means form validation could also be in just one place, instead of having to have it duplicated in the frontend and the backend
+- TypeScript support out of the box :)
+- `console.log` logs to browser and node!
+- Works without JS in the browser!!!
+  - When JS is disabled, it seems to fall back to server-side rendering. Everything still works and the page size is even smaller (~5 KB compressed vs ~69 KB)
+- react-router is built in
+- It's just a normal Node.js app so deployment is easy
+- Like any framework, there's a bit of a learning curve as you learn new concepts (nested routes, outlet, etc.)
 
-From your terminal:
+#### Questions
 
-```sh
-npm run dev
-```
-
-This starts your app in development mode, rebuilding assets on file changes.
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+- Could it be used to create just an API? Or maybe that would be overkill ...
